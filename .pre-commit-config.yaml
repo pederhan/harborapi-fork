@@ -12,9 +12,9 @@ repos:
     rev: v3.12.0
     hooks:
       - id: reorder-python-imports
-        args: [--py38-plus, --add-import, "from __future__ import annotations"]
+        args: [--py38-plus, --add-import, "from __future__ import annotations", --exit-zero-even-if-changed]
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: "v0.1.7"
+    rev: "v0.3.0"
     hooks:
       # Run the linter.
       - id: ruff

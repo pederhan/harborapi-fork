@@ -130,7 +130,15 @@ exclude_also = [
   'if __name__ == __main__:',
 ]
 
+
 [tool.ruff]
+exclude = [
+  "codegen/ast/fragments",
+  "harborapi/models/_models.py",
+  "harborapi/models/_scanner.py",
+]
+
+[tool.ruff.lint]
 ignore = [
   # Rules disabled due to using Ruff as formatter
   # See: https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
@@ -151,13 +159,9 @@ ignore = [
   # Other rules
   "E501", # line too long (we let the formatter handle this)
 ]
-exclude = [
-  "codegen/ast/fragments",
-  "harborapi/models/_models.py",
-  "harborapi/models/_scanner.py",
-]
 
-[tool.ruff.per-file-ignores]
+
+[tool.ruff.lint.per-file-ignores]
 "__init__.py" = ["E402", "F401", "F403"]
 
 [tool.mypy]
